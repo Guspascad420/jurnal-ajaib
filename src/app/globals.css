@@ -1,26 +1,46 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #869471;
+  --foreground: #FFCB69;
+  --light-background: #FEFAE0
 }
 
-@theme inline {
-  --color-background: var(--background);
+/* styles/globals.css or app/globals.css */
+@font-face {
+  font-family: BalooTamma;
+  font-display: swap;
+  src: url('../../public/fonts/baloo-tamma.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.outline-text {
+  -webkit-text-stroke: 1.7px #5A6144; /* For WebKit browsers */
+}
+
+.double-border::before {
+  content: '';
+  position: absolute;
+  inset: -0px; /* offset to create the outer border */
+  border: 4px solid #FFCB69;
+  border-radius: 0.5rem; /* match if you're using rounded-md */
+  z-index: -1;
+}
+
+.outline-text-2 {
+  -webkit-text-stroke: 1.3px #5A6144;
+}
+
+
+@theme {
+  --color-primary: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --color-light-bg: var(--light-background);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-display: "BalooTamma", "sans-serif";
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--light-background);
 }
