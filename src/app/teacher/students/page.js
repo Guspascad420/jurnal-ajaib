@@ -5,7 +5,6 @@ import { LiaEdit } from "react-icons/lia";
 import { MdDeleteOutline } from "react-icons/md";
 import { useStudents } from "@/lib/supabase/hooks";
 import { FiUploadCloud } from "react-icons/fi";
-import { TailSpin } from 'react-loader-spinner'
 import { supabase } from "@/lib/supabaseClient";
 
 export default function Students() {
@@ -196,18 +195,9 @@ export default function Students() {
                                 </div>
                             )}
                             <div className="flex justify-end mt-5">
-                                <button onClick={handleSubmit} className="cursor-pointer px-5 py-3 font-bold text-white rounded-lg bg-[#2D3648]">
+                                <button onClick={handleSubmit} className="cursor-pointer w-32 px-5 py-3 font-bold text-white flex justify-center rounded-lg bg-[#2D3648]">
                                     {
-                                        uploading ? <TailSpin
-                                            visible={true}
-                                            height="26"
-                                            width="75"
-                                            color="#ffffff"
-                                            ariaLabel="tail-spin-loading"
-                                            radius="1"
-                                            wrapperStyle={{}}
-                                            wrapperClass=""
-                                        /> : '+ Tambah'
+                                        !uploading ? <div className="w-10 h-10 border-4 border-gray-300 border-t-[#5A6144] rounded-full animate-spin"></div> : '+ Tambah'
                                     }
                                 </button>
                             </div>
