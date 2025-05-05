@@ -5,8 +5,8 @@ import { useRouter } from 'next/navigation';
 
 export default function Login() {
   const router = useRouter();
-  const [email, setEmail] = useState('masrusdi@gmail.com');
-  const [password, setPassword] = useState('rusdiabetes');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   // const [fullName, setfullName] = useState('');
 
