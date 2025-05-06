@@ -7,7 +7,7 @@ import { useParams } from 'next/navigation';
 import { FiBookOpen } from "react-icons/fi";
 import { MdPersonOutline } from "react-icons/md";
 import { useState } from "react";
-import { supabase } from "@/lib/supabaseClient";
+import logoSlb from '../../../../../../public/logo_slb.jpg';
 
 export default function AddBook() {
     const params = useParams();
@@ -53,6 +53,7 @@ export default function AddBook() {
                         <h1 className="text-center font-display bg-gradient-to-b text-4xl outline-text from-[#FCEFB4] to-[#FFCB69] bg-clip-text text-transparent">Jurnal Ajaib</h1>
                         <h1 className="text-center -mt-2 font-display bg-gradient-to-b text-2xl outline-text-2 from-[#FCEFB4] to-[#FFCB69] bg-clip-text text-transparent">Anak Luar Biasa </h1>
                     </div>
+                    <Image src={logoSlb} width={100} alt="" className="rounded-lg"/>
                     <div className="flex">
                         <Link href={`/students/${id}`} className="flex items-center border-2 border-b-light-bg border-t-0 border-x-0">
                             <FiBookOpen size={20} className="text-light-bg mb-1" />

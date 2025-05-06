@@ -2,6 +2,8 @@
 import StudentCard from "@/components/studentCard";
 import { supabase } from '../../lib/supabaseClient'
 import { useEffect, useState } from "react";
+import Image from "next/image";
+import logoSlb from '../../../public/logo_slb.jpg'
 
 export default function Home() {
     const handleSignOut = async () => {
@@ -43,14 +45,15 @@ export default function Home() {
     return (
         <div className="fixed inset-0 bg-[url(/bg_school_koutei.jpg)] bg-cover bg-center -z-10">
             <div className="relative z-10 h-screen overflow-y-scroll">
-                <header className="bg-primary py-5 flex justify-between px-14">
+                <header className="bg-primary py-5 flex justify-between items-center px-14">
                     <div>
                         <h1 className="text-center font-display bg-gradient-to-b text-4xl outline-text from-[#FCEFB4] to-[#FFCB69] bg-clip-text text-transparent">Jurnal Ajaib</h1>
                         <h1 className="text-center -mt-2 font-display bg-gradient-to-b text-2xl outline-text-2 from-[#FCEFB4] to-[#FFCB69] bg-clip-text text-transparent">Anak Luar Biasa </h1>
                     </div>
+                    <Image src={logoSlb} width={100} alt="" className="rounded-lg"/>
                     <button
                         onClick={handleSignOut}
-                        className="px-3 my-2 cursor-pointer bg-red-800 font-bold border-2 border-[#FFCB69] text-white rounded-xl transition"
+                        className="px-3 py-3 my-2 cursor-pointer bg-red-800 font-bold border-2 border-[#FFCB69] text-white rounded-xl transition"
                     >
                         Log Out
                     </button>

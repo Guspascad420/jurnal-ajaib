@@ -1,6 +1,8 @@
 'use client'
 import { supabase } from "@/lib/supabaseClient";
 import { useState } from "react";
+import Image from "next/image";
+import logoSlb from '../../../public/logo_slb.jpg'
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -36,6 +38,7 @@ export default function Login() {
           <h1 className="text-center font-display bg-gradient-to-b text-4xl outline-text from-[#FCEFB4] to-[#FFCB69] bg-clip-text text-transparent">Jurnal Ajaib</h1>
           <h1 className="text-center -mt-2 font-display bg-gradient-to-b text-2xl outline-text-2 from-[#FCEFB4] to-[#FFCB69] bg-clip-text text-transparent">Anak Luar Biasa </h1>
         </div>
+         <Image src={logoSlb} width={100} alt="" className="rounded-lg"/>
         <div className="font-display text-center font-medium text-[#5A6144] [text-shadow:-2px_-2px_0_#D1E0CD,-1px_-2px_0_#D1E0CD,0_-2px_0_#D1E0CD,1px_-2px_0_#D1E0CD,2px_-2px_0_#D1E0CD,2px_-1px_0_#D1E0CD,2px_0_0_#D1E0CD,2px_1px_0_#D1E0CD,2px_2px_0_#D1E0CD,1px_2px_0_#D1E0CD,0_2px_0_#D1E0CD,-1px_2px_0_#D1E0CD,-2px_2px_0_#D1E0CD,-2px_1px_0_#D1E0CD,-2px_0_0_#D1E0CD,-2px_-1px_0_#D1E0CD,-2px_-2px_0_#D1E0CD]">
           <h1 className="text-2xl">
             SLB Putra Jaya Malang
@@ -47,7 +50,7 @@ export default function Login() {
       </header>
       <div className="w-full bg-[#FFCB69] border-2 py-2 border-l-0 border-r-0"></div>
       <div className="flex flex-col justify-center items-center flex-1 py-14">
-        <div className="bg-[#869471] rounded-2xl border-3 border-[#5A6144] p-10">
+        <div className="bg-[#869471] text-light-bg rounded-2xl border-3 border-[#5A6144] p-10">
           <h1 className="font-display text-light-bg [text-shadow:-2px_-2px_0_#5A6144,-1px_-2px_0_#5A6144,0_-2px_0_#5A6144,1px_-2px_0_#5A6144,2px_-2px_0_#5A6144,2px_-1px_0_#5A6144,2px_0_0_#5A6144,2px_1px_0_#5A6144,2px_2px_0_#5A6144,1px_2px_0_#5A6144,0_2px_0_#5A6144,-1px_2px_0_#5A6144,-2px_2px_0_#5A6144,-2px_1px_0_#5A6144,-2px_0_0_#5A6144,-2px_-1px_0_#5A6144,-2px_-2px_0_#5A6144] text-3xl mb-5">Masuk ke Akun Sekolahmu</h1>
           {error && <div className="text-red-500">{error}</div>}
           <div className="max-w-sm mx-auto mt-10 space-y-4">

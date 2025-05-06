@@ -13,6 +13,7 @@ import { supabase } from "@/lib/supabaseClient";
 import bronze from "/public/bronze.png";
 import silver from "/public/silver.png";
 import gold from "/public/gold.png";
+import logoSlb from '../../../../public/logo_slb.jpg';
 
 export default function Student() {
     const params = useParams();
@@ -100,6 +101,7 @@ export default function Student() {
                         <h1 className="text-center font-display bg-gradient-to-b text-4xl outline-text from-[#FCEFB4] to-[#FFCB69] bg-clip-text text-transparent">Jurnal Ajaib</h1>
                         <h1 className="text-center -mt-2 font-display bg-gradient-to-b text-2xl outline-text-2 from-[#FCEFB4] to-[#FFCB69] bg-clip-text text-transparent">Anak Luar Biasa </h1>
                     </div>
+                    <Image src={logoSlb} width={100} alt="" className="rounded-lg"/>
                     <div className="flex">
                         <div className="flex items-center border-2 border-b-light-bg border-t-0 border-x-0">
                             <FiBookOpen size={20} className="text-light-bg mb-1" />

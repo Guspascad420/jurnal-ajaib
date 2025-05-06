@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import { supabase } from '../../lib/supabaseClient';
 import { useRouter } from 'next/router';
+import Image from "next/image";
+import logoSlb from '../../../public/logo_slb.jpg';
 
 export default function SignUp() {
     const [email, setEmail] = useState('');
@@ -56,11 +58,12 @@ export default function SignUp() {
 
     return (
         <div className="flex flex-col h-screen">
-            <header className="bg-primary py-5 px-10 flex justify-between">
+            <header className="bg-primary py-5 px-10 flex justify-between items-center">
                 <div>
                     <h1 className="text-center font-display bg-gradient-to-b text-4xl outline-text from-[#FCEFB4] to-[#FFCB69] bg-clip-text text-transparent">Jurnal Ajaib</h1>
                     <h1 className="text-center -mt-2 font-display bg-gradient-to-b text-2xl outline-text-2 from-[#FCEFB4] to-[#FFCB69] bg-clip-text text-transparent">Anak Luar Biasa </h1>
                 </div>
+                <Image src={logoSlb} width={100} alt="" className="rounded-lg"/>
                 <div className="font-display text-center font-medium text-[#5A6144] [text-shadow:-2px_-2px_0_#D1E0CD,-1px_-2px_0_#D1E0CD,0_-2px_0_#D1E0CD,1px_-2px_0_#D1E0CD,2px_-2px_0_#D1E0CD,2px_-1px_0_#D1E0CD,2px_0_0_#D1E0CD,2px_1px_0_#D1E0CD,2px_2px_0_#D1E0CD,1px_2px_0_#D1E0CD,0_2px_0_#D1E0CD,-1px_2px_0_#D1E0CD,-2px_2px_0_#D1E0CD,-2px_1px_0_#D1E0CD,-2px_0_0_#D1E0CD,-2px_-1px_0_#D1E0CD,-2px_-2px_0_#D1E0CD]">
                     <h1 className="text-2xl">
                         SLB Putra Jaya Malang
