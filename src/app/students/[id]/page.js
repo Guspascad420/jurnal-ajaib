@@ -54,7 +54,6 @@ export default function Student() {
     const handleUpdatePage = async (bookId, currentPage, totalPages) => {
         setIsUpdating(true);
         setError(null);
-
         try {
             const { error } = await supabase
                 .from('student_books')
@@ -77,6 +76,9 @@ export default function Student() {
             setError(err.message);
         } finally {
             setIsUpdating(false);
+            const audio = new Audio('/smb3_level_clear.wav');
+            audio.play().catch(() => { });
+
         }
     };
 
@@ -118,8 +120,8 @@ export default function Student() {
                                 <div className="flex font-display items-center px-12 py-10 mb-16 bg-gradient-to-b rounded-lg from-[#FCEFB4] to-[#FFCB69] border-2 border-[#7D371E]">
                                     <Image src={
                                         progress === 50 ? bronze :
-                                        progress === 75 ? silver :
-                                        progress === 100 ? gold : student2
+                                            progress === 75 ? silver :
+                                                progress === 100 ? gold : student2
                                     } width={140} alt="" />
                                     <div className="ml-5">
                                         <h1 className="[-webkit-text-stroke:0.5px_#FFFFFF] text-4xl text-[#7D371E]">

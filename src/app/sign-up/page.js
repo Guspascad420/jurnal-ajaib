@@ -117,7 +117,7 @@ export default function SignUp() {
                         </button>
                     </div>
                 </div>
-                <div className="font-bold text-[#5A6144] mt-5">Sudah punya akun? <span className="text-[#FFCB69] hover:cursor-pointer">Masuk</span></div>
+                <div className="font-bold text-[#5A6144] mt-5">Sudah punya akun? <span className="text-[#FFCB69] hover:cursor-pointer"><a href="/login">Masuk</a></span></div>
             </div>
         </div>
     );
