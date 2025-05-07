@@ -52,7 +52,7 @@ export default function Student() {
         });
     };
 
-    const handleUpdatePage = async (bookId, currentPage, totalPages) => {
+    const handleUpdatePage = async (bookId, totalPages) => {
         setIsUpdating(true);
         setError(null);
         try {
@@ -183,7 +183,7 @@ export default function Student() {
                                                                 }`}>
                                                             +
                                                         </button>
-                                                        <button disabled={isUpdating} onClick={() => handleUpdatePage(studentBooks[0].id, studentBooks[0].current_page, studentBooks[0].total_pages)}
+                                                        <button disabled={isUpdating} onClick={() => handleUpdatePage(studentBooks[0].id, studentBooks[0].total_pages)}
                                                             className="cursor-pointer drop-shadow-[0_4px_0.5px_#646F55] px-5 py-3 ml-5 bg-[#5A6144] font-bold border-2 border-[#FFCB69] text-white rounded-lg transition"
                                                         >
                                                             Tambah Halaman
