@@ -101,7 +101,7 @@ export default function Student() {
                         <h1 className="text-center font-display bg-gradient-to-b text-4xl outline-text from-[#FCEFB4] to-[#FFCB69] bg-clip-text text-transparent">Jurnal Ajaib</h1>
                         <h1 className="text-center -mt-2 font-display bg-gradient-to-b text-2xl outline-text-2 from-[#FCEFB4] to-[#FFCB69] bg-clip-text text-transparent">Anak Luar Biasa </h1>
                     </div>
-                    <Image src={logoSlb} width={100} alt="" className="rounded-lg"/>
+                    <Image src={logoSlb} width={100} alt="" className="rounded-lg" />
                     <div className="flex">
                         <div className="flex items-center border-2 border-b-light-bg border-t-0 border-x-0">
                             <FiBookOpen size={20} className="text-light-bg mb-1" />
@@ -173,9 +173,14 @@ export default function Student() {
                                                             <div className="bg-white px-2 py-[1px]"></div>
                                                         </button>
                                                         <div className="mx-5 rounded-xl bg-[#6E6852] h-13 w-14 text-3xl pt-1 font-display border-3 border-[#FFCB69] text-white flex justify-center items-center">{count}</div>
-                                                        <button onClick={() => setCount(count + 1)} onMouseDown={() => setincrementPressed(!incrementPressed)} onMouseUp={() => setincrementPressed(!incrementPressed)} className={`cursor-pointer rounded-xl px-3 pb-2 pt-1 border-3
+                                                        <button onClick={() => {
+                                                            if (count < studentBooks[0].total_pages - currentPage) setCount(count + 1)
+                                                        }}
+                                                            onMouseDown={() => setincrementPressed(!incrementPressed)}
+                                                            onMouseUp={() => setincrementPressed(!incrementPressed)}
+                                                            className={`cursor-pointer rounded-xl px-3 pb-2 pt-1 border-3
                                      text-white border-[#FFCB69] bg-[#6163E8] font-bold text-2xl ${incrementPressed ? '' : 'drop-shadow-[0_4px_0.5px_#646F55]'
-                                                            }`}>
+                                                                }`}>
                                                             +
                                                         </button>
                                                         <button disabled={isUpdating} onClick={() => handleUpdatePage(studentBooks[0].id, studentBooks[0].current_page, studentBooks[0].total_pages)}
